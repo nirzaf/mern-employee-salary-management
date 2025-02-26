@@ -59,7 +59,7 @@ const FormEditDataKehadiran = () => {
             setMsg(response.data.msg);
             Swal.fire({
                 icon: 'success',
-                title: 'Berhasil',
+                title: 'Success',
                 timer: 1500,
                 text: response.data.msg
             });
@@ -68,7 +68,7 @@ const FormEditDataKehadiran = () => {
             setMsg(error.response.data.msg);
             Swal.fire({
                 icon: 'error',
-                title: 'Gagal',
+                title: 'Failed',
                 text: error.response.data.msg
             });
         }
@@ -89,14 +89,14 @@ const FormEditDataKehadiran = () => {
 
     return (
         <Layout>
-            <Breadcrumb pageName='Form Edit Data Kehadiran Pegawai' />
+            <Breadcrumb pageName='Form Edit Employee Attendance Data' />
 
             <div className='sm:grid-cols-2'>
                 <div className='flex flex-col gap-9'>
                     <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark'>
                         <div className='border-b border-stroke py-4 px-6.5 dark:border-strokedark'>
                             <h3 className='font-medium text-black dark:text-white'>
-                                Form Edit Data Kehadiran Pegawai
+                                Form Edit Employee Attendance Data
                             </h3>
                         </div>
                         <form onSubmit={updateDataKehadiran}>
@@ -104,7 +104,7 @@ const FormEditDataKehadiran = () => {
                                 <div className='mb-4.5 flex flex-col gap-6 xl:flex-row'>
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Nama Pegawai <span className='text-meta-1'>*</span>
+                                            Employee Name <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='text'
@@ -113,7 +113,7 @@ const FormEditDataKehadiran = () => {
                                             value={namaPegawai}
                                             onChange={(e) => setNamaPegawai(e.target.value)}
                                             disabled
-                                            placeholder='Masukkan Nama'
+                                            placeholder='Enter Name'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -129,7 +129,7 @@ const FormEditDataKehadiran = () => {
                                             onChange={(e) => setNik(e.target.value)}
                                             required
                                             disabled
-                                            placeholder='Masukkan NIK'
+                                            placeholder='Enter NIK'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -138,7 +138,7 @@ const FormEditDataKehadiran = () => {
                                 <div className="mb-4.5 flex flex-col gap-6 xl:flex-row mt-10">
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Jabatan <span className='text-meta-1'>*</span>
+                                            Position <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='text'
@@ -148,14 +148,14 @@ const FormEditDataKehadiran = () => {
                                             onChange={(e) => setNamaJabatan(e.target.value)}
                                             required={true}
                                             disabled
-                                            placeholder='Masukkan jabatan'
+                                            placeholder='Enter position'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
 
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Hadir <span className='text-meta-1'>*</span>
+                                            Present <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -164,7 +164,7 @@ const FormEditDataKehadiran = () => {
                                             value={hadir}
                                             onChange={(e) => setHadir(e.target.value)}
                                             required
-                                            placeholder='Masukkan hadir'
+                                            placeholder='Enter present'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -173,7 +173,7 @@ const FormEditDataKehadiran = () => {
                                 <div className="mb-4.5 flex flex-col gap-6 xl:flex-row mt-10">
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Sakit <span className='text-meta-1'>*</span>
+                                            Sick <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -182,14 +182,14 @@ const FormEditDataKehadiran = () => {
                                             value={sakit}
                                             onChange={(e) => setSakit(e.target.value)}
                                             required
-                                            placeholder='Masukkan sakit'
+                                            placeholder='Enter sick'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
 
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Alpha <span className='text-meta-1'>*</span>
+                                            Absent <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -198,7 +198,7 @@ const FormEditDataKehadiran = () => {
                                             value={alpha}
                                             onChange={(e) => setAlpha(e.target.value)}
                                             required
-                                            placeholder='Masukkan alpha'
+                                            placeholder='Enter absent'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -206,12 +206,12 @@ const FormEditDataKehadiran = () => {
                                 <div className='flex flex-col md:flex-row w-full gap-3 text-center'>
                                     <div>
                                         <ButtonOne  >
-                                            <span>Perbarui</span>
+                                            <span>Update</span>
                                         </ButtonOne>
                                     </div>
                                     <Link to="/data-kehadiran" >
                                         <ButtonTwo  >
-                                            <span>Kembali</span>
+                                            <span>Back</span>
                                         </ButtonTwo>
                                     </Link>
                                 </div>

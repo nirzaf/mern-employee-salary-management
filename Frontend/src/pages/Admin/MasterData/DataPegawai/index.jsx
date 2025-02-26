@@ -58,19 +58,19 @@ const DataPegawai = () => {
 
     const onDeletePegawai = (id) => {
         Swal.fire({
-            title: 'Konfirmasi',
-            text: 'Apakah Anda yakin ingin Menghapus?',
+            title: 'Confirmation',
+            text: 'Are you sure you want to delete?',
             icon: 'question',
             showCancelButton: true,
-            confirmButtonText: 'Ya',
-            cancelButtonText: 'Tidak',
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No',
             reverseButtons: true,
         }).then((result) => {
             if (result.isConfirmed) {
                 dispatch(deleteDataPegawai(id)).then(() => {
                     Swal.fire({
-                        title: 'Berhasil',
-                        text: 'Data pegawai berhasil dihapus.',
+                        title: 'Success',
+                        text: 'Employee data has been successfully deleted.',
                         icon: 'success',
                         timer: 1000,
                         timerProgressBar: true,
@@ -146,10 +146,10 @@ const DataPegawai = () => {
 
     return (
         <Layout>
-            <Breadcrumb pageName="Data Pegawai" />
+            <Breadcrumb pageName="Employee Data" />
             <Link to="/data-pegawai/form-data-pegawai/add">
                 <ButtonOne>
-                    <span>Tambah Pegawai</span>
+                    <span>Add Employee</span>
                     <span>
                         <FaPlus />
                     </span>
@@ -168,15 +168,15 @@ const DataPegawai = () => {
                                 className="relative appearance-none rounded border border-stroke bg-transparent py-3 px-8 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input"
                             >
                                 <option value="">Status</option>
-                                <option value="Karyawan Tetap">Karyawan Tetap</option>
-                                <option value="Karyawan Tidak Tetap">Karyawan Tidak Tetap</option>
+                                <option value="Karyawan Tetap">Permanent Employee</option>
+                                <option value="Karyawan Tidak Tetap">Non-Permanent Employee</option>
                             </select>
                         </div>
                     </div>
                     <div className="relative flex-2 mb-4 md:mb-0">
                         <input
                             type="text"
-                            placeholder="Cari Nama Pegawai..."
+                            placeholder="Search Employee Name..."
                             value={searchKeyword}
                             onChange={handleSearch}
                             className="rounded-lg border-[1.5px] border-stroke bg-transparent py-2 pl-10 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary left-0"
@@ -194,12 +194,12 @@ const DataPegawai = () => {
                                 <th className="py-4 px-4 font-medium text-black dark:text-white xl:pl-11">No</th>
                                 <th className="py-4 px-4 font-medium text-black dark:text-white xl:pl-11">Photo</th>
                                 <th className="py-4 px-4 font-medium text-black dark:text-white xl:pl-11">NIK</th>
-                                <th className="py-4 px-4 font-medium text-black dark:text-white">Nama Pegawai</th>
-                                <th className="py-4 px-4 font-medium text-black dark:text-white">Jenis Kelamin</th>
-                                <th className="py-4 px-4 font-medium text-black dark:text-white">Tanggal Masuk</th>
+                                <th className="py-4 px-4 font-medium text-black dark:text-white">Employee Name</th>
+                                <th className="py-4 px-4 font-medium text-black dark:text-white">Gender</th>
+                                <th className="py-4 px-4 font-medium text-black dark:text-white">Date of Entry</th>
                                 <th className="py-4 px-4 font-medium text-black dark:text-white">Status</th>
-                                <th className="py-4 px-4 font-medium text-black dark:text-white">Hak Akses</th>
-                                <th className="py-4 px-4 font-medium text-black dark:text-white">Aksi</th>
+                                <th className="py-4 px-4 font-medium text-black dark:text-white">Access Rights</th>
+                                <th className="py-4 px-4 font-medium text-black dark:text-white">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -258,7 +258,7 @@ const DataPegawai = () => {
                 <div className="flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between">
                     <div className="flex items-center space-x-2">
                         <span className="text-gray-5 dark:text-gray-4 text-sm py-4">
-                            Menampilkan {startIndex + 1}-{Math.min(endIndex, filteredDataPegawai.length)} dari {filteredDataPegawai.length} Data Pegawai
+                            Showing {startIndex + 1}-{Math.min(endIndex, filteredDataPegawai.length)} of {filteredDataPegawai.length} Employee Data
                         </span>
                     </div>
                     <div className="flex space-x-2 py-4">

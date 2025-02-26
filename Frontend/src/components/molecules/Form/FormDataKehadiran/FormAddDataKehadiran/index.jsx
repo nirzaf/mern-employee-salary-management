@@ -104,8 +104,8 @@ const FormAddDataKehadiran = () => {
                     navigate("/data-kehadiran");
                     Swal.fire({
                         icon: 'success',
-                        title: "Berhasil",
-                        text: "Data Berhasil di Simpan",
+                        title: "Success",
+                        text: "Data saved successfully",
                         showConfirmButton: false,
                         timer: 1500,
                     });
@@ -187,14 +187,14 @@ const FormAddDataKehadiran = () => {
 
     return (
         <Layout>
-            <Breadcrumb pageName="Form Data Kehadiran Pegawai" />
+            <Breadcrumb pageName="Form Employee Attendance Data" />
             <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1 mt-6">
                 <form onSubmit={saveDataKehadiran}>
                     <div className="flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between">
                         <div className="relative flex-2 mb-4 md:mb-0">
                             <input
                                 type="text"
-                                placeholder="Cari Nama Pegawai..."
+                                placeholder="Search Employee Name..."
                                 value={searchKeyword}
                                 onChange={handleSearch}
                                 className="rounded-lg border-[1.5px] border-stroke bg-transparent py-2 pl-10 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary left-0"
@@ -215,22 +215,22 @@ const FormAddDataKehadiran = () => {
                                         NIK
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                                        Nama Pegawai
+                                        Employee Name
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                                        Jabatan
+                                        Position
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                                        Jenis Kelamin
+                                        Gender
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                                        Hadir
+                                        Present
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                                        Sakit
+                                        Sick
                                     </th>
                                     <th className="py-4 px-4 font-medium text-black dark:text-white">
-                                        Alpha
+                                        Absent
                                     </th>
                                 </tr>
                             </thead>
@@ -250,7 +250,7 @@ const FormAddDataKehadiran = () => {
                                             </td>
                                             <td className="py-5 px-4"
                                                 colSpan="8">
-                                                <p className="text-center text-black dark:text-white">Data Kehadiran Pegawai Sudah di Simpan. Input Kembali Ketika Sudah Ganti Periode !</p>
+                                                <p className="text-center text-black dark:text-white">Employee Attendance Data has been saved. Input again when the period has changed!</p>
                                             </td>
                                         </tr>;
                                     }
@@ -320,7 +320,7 @@ const FormAddDataKehadiran = () => {
                     <div className="flex justify-between items-center mt-4 flex-col md:flex-row md:justify-between">
                         <div className="flex items-center space-x-2">
                             <span className="text-gray-5 dark:text-gray-4 text-sm py-4">
-                                Menampilkan {startIndex + 1}-{Math.min(endIndex, filteredDataPegawai.length)} dari {filteredDataPegawai.length} Data Kehadiran Pegawai
+                                Showing {startIndex + 1}-{Math.min(endIndex, filteredDataPegawai.length)} of {filteredDataPegawai.length} Employee Attendance Data
                             </span>
 
                         </div>
@@ -345,12 +345,12 @@ const FormAddDataKehadiran = () => {
                     <div className="flex flex-col md:flex-row w-full gap-3 text-center py-4">
                         <div>
                             <ButtonOne type="submit">
-                                <span>Simpan</span>
+                                <span>Save</span>
                             </ButtonOne>
                         </div>
                         <Link to="/data-kehadiran">
                             <ButtonTwo>
-                                <span>Kembali</span>
+                                <span>Back</span>
                             </ButtonTwo>
                         </Link>
                     </div>

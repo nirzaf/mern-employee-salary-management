@@ -72,9 +72,9 @@ const Contact = () => {
                         animate={viewDiv && "visible"}
                         variants={headingAnimation}
                     >
-                        <h3 className="text-neutral text-center dark:text-white">Kontak</h3>
+                        <h3 className="text-neutral text-center dark:text-white">Contact</h3>
                         <h1 className="text-4xl font-semibold drop-shadow-md text-center text-accent dark:text-white">
-                            Hubungi <span className="text-primary">Kami</span>
+                            Contact <span className="text-primary">Us</span>
                         </h1>
                         <BottomLine />
                     </motion.div>
@@ -93,7 +93,7 @@ const Contact = () => {
                                         type="text"
                                         name="name"
                                         id="name"
-                                        placeholder="Nama"
+                                        placeholder="Name"
                                         required
                                     />
                                     <input
@@ -110,7 +110,7 @@ const Contact = () => {
                                     type="text"
                                     name="subject"
                                     id="subject"
-                                    placeholder="Subjek"
+                                    placeholder="Subject"
                                     required
                                 />
                                 <textarea
@@ -119,7 +119,7 @@ const Contact = () => {
                                     id="message"
                                     cols="30"
                                     rows="5"
-                                    placeholder="Pesan"
+                                    placeholder="Message"
                                     required
                                 ></textarea>
                                 <ButtonThree
@@ -127,7 +127,7 @@ const Contact = () => {
                                     value="Send Message"
                                     className=""
                                 >
-                                    <span>Kirim</span>
+                                    <span>Send</span>
                                     <span><MdSend /></span>
                                 </ButtonThree>
                             </form>
@@ -154,7 +154,7 @@ const Contact = () => {
                                 <FaLocationArrow className="text-2xl mr-8 text-primary duration-300"></FaLocationArrow>
 
                                 <h3 className="font-medium dark:text-white">
-                                    Karawang, Jawa Barat, Indonesia
+                                    Karawang, West Java, Indonesia
                                 </h3>
                             </div>
                             <div className="mt-8 flex items-center">
