@@ -37,7 +37,7 @@ const FormAddDataJabatan = () => {
             .then((response) => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Berhasil',
+                    title: 'Success',
                     text: response.message,
                     showConfirmButton: false,
                     timer: 1500,
@@ -47,22 +47,22 @@ const FormAddDataJabatan = () => {
                 if (error.response && error.response.data && error.response.data.msg) {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Gagal',
+                        title: 'Failed',
                         text: error.response.data.msg,
                         confirmButtonText: 'Ok',
                     });
                 } else if (error.message) {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Gagal',
+                        title: 'Failed',
                         text: error.message,
                         confirmButtonText: 'Ok',
                     });
                 } else {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Gagal',
-                        text: 'Terjadi kesalahan',
+                        title: 'Failed',
+                        text: 'An error occurred',
                         confirmButtonText: 'Ok',
                     });
                 }
@@ -92,14 +92,14 @@ const FormAddDataJabatan = () => {
 
     return (
         <Layout>
-            <Breadcrumb pageName='Form Jabatan' />
+            <Breadcrumb pageName='Form Position' />
 
             <div className='sm:grid-cols-2'>
                 <div className='flex flex-col gap-9'>
                     <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark'>
                         <div className='border-b border-stroke py-4 px-6.5 dark:border-strokedark'>
                             <h3 className='font-medium text-black dark:text-white'>
-                                Form Data Jabatan
+                                Form Position Data
                             </h3>
                         </div>
                         <form onSubmit={submitDataJabatan}>
@@ -107,7 +107,7 @@ const FormAddDataJabatan = () => {
                                 <div className='mb-4.5 flex flex-col gap-6 xl:flex-row'>
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Jabatan <span className='text-meta-1'>*</span>
+                                            Position <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='text'
@@ -116,13 +116,13 @@ const FormAddDataJabatan = () => {
                                             value={namaJabatan}
                                             onChange={handleChange}
                                             required={true}
-                                            placeholder='Masukkan jabatan'
+                                            placeholder='Enter position'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Gaji Pokok <span className='text-meta-1'>*</span>
+                                            Basic Salary <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -131,7 +131,7 @@ const FormAddDataJabatan = () => {
                                             value={gajiPokok}
                                             onChange={handleChange}
                                             required
-                                            placeholder='Masukkan gaji pokok'
+                                            placeholder='Enter basic salary'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -140,7 +140,7 @@ const FormAddDataJabatan = () => {
                                 <div className="mb-4.5 flex flex-col gap-6 xl:flex-row mt-10">
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Tunjangan Transport <span className='text-meta-1'>*</span>
+                                            Transport Allowance <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -149,14 +149,14 @@ const FormAddDataJabatan = () => {
                                             value={tjTransport}
                                             onChange={handleChange}
                                             required
-                                            placeholder='Masukkan tunjangan transport'
+                                            placeholder='Enter transport allowance'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
 
                                     <div className='w-full xl:w-1/2'>
                                         <label className='mb-2.5 block text-black dark:text-white'>
-                                            Uang Makan <span className='text-meta-1'>*</span>
+                                            Meal Allowance <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -165,7 +165,7 @@ const FormAddDataJabatan = () => {
                                             value={uangMakan}
                                             onChange={handleChange}
                                             required
-                                            placeholder='Masukkan uang makan'
+                                            placeholder='Enter meal allowance'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -174,12 +174,12 @@ const FormAddDataJabatan = () => {
                                 <div className='flex flex-col md:flex-row w-full gap-3 text-center'>
                                     <div>
                                         <ButtonOne>
-                                            <span>Simpan</span>
+                                            <span>Save</span>
                                         </ButtonOne>
                                     </div>
                                     <Link to="/data-jabatan" >
                                         <ButtonTwo>
-                                            <span>Kembali</span>
+                                            <span>Back</span>
                                         </ButtonTwo>
                                     </Link>
                                 </div>

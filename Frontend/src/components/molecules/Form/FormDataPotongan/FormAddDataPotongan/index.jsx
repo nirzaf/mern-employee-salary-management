@@ -31,7 +31,7 @@ const FormAddDataPotongan = () => {
             .then((response) => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Berhasil',
+                    title: 'Success',
                     text: response.message,
                     showConfirmButton: false,
                     timer: 1500,
@@ -41,22 +41,22 @@ const FormAddDataPotongan = () => {
                 if (error.response && error.response.data && error.response.data.msg) {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Gagal',
+                        title: 'Failed',
                         text: error.response.data.msg,
                         confirmButtonText: 'Ok',
                     });
                 } else if (error.message) {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Gagal',
+                        title: 'Failed',
                         text: error.message,
                         confirmButtonText: 'Ok',
                     });
                 } else {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Gagal',
-                        text: 'Terjadi kesalahan',
+                        title: 'Failed',
+                        text: 'An error occurred',
                         confirmButtonText: 'Ok',
                     });
                 }
@@ -86,14 +86,14 @@ const FormAddDataPotongan = () => {
 
     return (
         <Layout>
-            <Breadcrumb pageName='Form Data Potongan' />
+            <Breadcrumb pageName='Form Deduction Data' />
 
             <div className='sm:grid-cols-2'>
                 <div className='flex flex-col gap-9'>
                     <div className='rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark'>
                         <div className='border-b border-stroke py-4 px-6.5 dark:border-strokedark'>
                             <h3 className='font-medium text-black dark:text-white'>
-                                Form Data Potongan
+                                Form Deduction Data
                             </h3>
                         </div>
                         <form onSubmit={submitDataPotongan}>
@@ -101,7 +101,7 @@ const FormAddDataPotongan = () => {
                                 <div className='mb-4.5 '>
                                     <div className='w-full mb-4'>
                                         <label className='mb-4 block text-black dark:text-white'>
-                                            Potongan <span className='text-meta-1'>*</span>
+                                            Deduction <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='text'
@@ -110,14 +110,14 @@ const FormAddDataPotongan = () => {
                                             value={potongan}
                                             onChange={handleChange}
                                             required={true}
-                                            placeholder='Masukkan potongan'
+                                            placeholder='Enter deduction'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
 
                                     <div className='w-full mb-4'>
                                         <label className='mb-4 block text-black dark:text-white'>
-                                            Jumlah Potongan <span className='text-meta-1'>*</span>
+                                            Deduction Amount <span className='text-meta-1'>*</span>
                                         </label>
                                         <input
                                             type='number'
@@ -126,7 +126,7 @@ const FormAddDataPotongan = () => {
                                             value={jmlPotongan}
                                             onChange={handleChange}
                                             required
-                                            placeholder='Masukkan jumlah potongan'
+                                            placeholder='Enter deduction amount'
                                             className='w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary'
                                         />
                                     </div>
@@ -135,12 +135,12 @@ const FormAddDataPotongan = () => {
                                 <div className='flex flex-col md:flex-row w-full gap-3 text-center'>
                                     <div>
                                         <ButtonOne  >
-                                            <span>Simpan</span>
+                                            <span>Save</span>
                                         </ButtonOne>
                                     </div>
                                     <Link to="/data-potongan" >
                                         <ButtonTwo  >
-                                            <span>Kembali</span>
+                                            <span>Back</span>
                                         </ButtonTwo>
                                     </Link>
                                 </div>
